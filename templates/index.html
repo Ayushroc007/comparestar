@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Comparison</title>
+</head>
+<body>
+    <h1>Price Comparison</h1>
+    <form method="post">
+        <label for="product">Product:</label>
+        <input type="text" id="product" name="product" required>
+        <button type="submit">Compare Prices</button>
+    </form>
+    {% if tables %}
+    <h2>Results:</h2>
+    <div>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
+
